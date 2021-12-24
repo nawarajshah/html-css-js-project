@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+body {
+  font-size: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #333;
+}
+
+path {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto
+}
+
+input {
+  border: 1px dotted;
+  width: 50%;
+}
+
+#pieChart {
+  /* border: red 1px dotted; */
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto
+}
+
+.text-container {
+  /* border: 1px dotted; */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#segmentText {
+  width: 100%;
+  padding: 20px;
+  text-align: centre;
+}
