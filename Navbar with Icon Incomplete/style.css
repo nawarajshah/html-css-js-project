@@ -15,8 +15,8 @@ i {
 
 /*----------navbar-css-code-end------------*/
 
-/* For horizintal navigation bar */
-@media(min-width: 992px){
+/* For horizintal navigation bar, min-992 */
+@media(min-width: 0){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
