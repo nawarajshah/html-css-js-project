@@ -115,6 +115,7 @@ i {
 }
 
 
+/* For horizintal navigation bar */
 @media(min-width: 992px){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
@@ -138,6 +139,7 @@ i {
 }
 
 
+/* For hamburger navigation bar */
 @media (max-width: 991px){
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
