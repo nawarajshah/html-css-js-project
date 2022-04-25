@@ -11,7 +11,7 @@ i {
 	margin-right: 10px;
 }
 /*----------bootstrap-navbar-css------------*/
-.navbar-logo{
+/* .navbar-logo{
 	padding: 15px;
 	color: #fff;
 }
@@ -112,11 +112,11 @@ i {
 .hori-selector .left:before{
 	bottom: 0;
     left: -25px;
-}
+} */
 
 
-/* For horizintal navigation bar */
-@media(min-width: 992px){
+/* For horizintal navigation bar, min-992 */
+@media(min-width: 0){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
@@ -140,7 +140,7 @@ i {
 
 
 /* For hamburger navigation bar */
-@media (max-width: 991px){
+/* @media (max-width: 991px){
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
@@ -170,4 +170,4 @@ i {
 		bottom: -25px;
 		left: -25px;
 	}
-}
+} */
