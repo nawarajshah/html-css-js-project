@@ -1,5 +1,5 @@
 // ---------Responsive-navbar-active-animation-----------
-function test(){
+function test() {
 	var tabsNewAnim = $('#navbarSupportedContent');
 	var activeItemNewAnim = tabsNewAnim.find('.active');
 	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
@@ -7,12 +7,12 @@ function test(){
 	var itemPosNewAnimTop = activeItemNewAnim.position();
 	var itemPosNewAnimLeft = activeItemNewAnim.position();
 	$(".hori-selector").css({
-		"top":itemPosNewAnimTop.top + "px", 
-		"left":itemPosNewAnimLeft.left + "px",
+		"top": itemPosNewAnimTop.top + "px",
+		"left": itemPosNewAnimLeft.left + "px",
 		"height": activeWidthNewAnimHeight + "px",
 		"width": activeWidthNewAnimWidth + "px"
 	});
-	$("#navbarSupportedContent").on("click","li",function(e){
+	$("#navbarSupportedContent").on("click", "li", function(e){
 		$('#navbarSupportedContent ul li').removeClass("active");
 		$(this).addClass('active');
 		var activeWidthNewAnimHeight = $(this).innerHeight();
@@ -20,7 +20,7 @@ function test(){
 		var itemPosNewAnimTop = $(this).position();
 		var itemPosNewAnimLeft = $(this).position();
 		$(".hori-selector").css({
-			"top":itemPosNewAnimTop.top + "px", 
+			"top":itemPosNewAnimTop.top + "px",
 			"left":itemPosNewAnimLeft.left + "px",
 			"height": activeWidthNewAnimHeight + "px",
 			"width": activeWidthNewAnimWidth + "px"
