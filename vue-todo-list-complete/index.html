@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo list - Vue.js</title>    
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" href="images/favicon.png" sizes="32x32">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,100,700,100italic,300italic,400italic">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+
+</head>
+
+<body>
+  <div id="app">
+    <h1>Daily To-Do list manager</h1>
+    <section class="todo-wrapper">
+      <h2 class="todo-title">{{ today.day }}<br>{{ today.date }}</h2>
+      <form @keydown.enter.prevent="">
+        <input type="text" class="input-todo" v-bind:class="{ active: new_todo }" placeholder="Take the garbage out" v-model="new_todo" v-on:keyup.enter="addItem">
+        <div class="btn btn-add" v-bind:class="{ active: new_todo }"  @click="addItem">+</div>
+      </form>
+
+      <div v-if="pending.length > 0">
+        <p class="status busy">You have {{ pending.length }} pending item<span v-if="pending.length>1">s</span></p>
+        <transition-group name="todo-item" tag="ul" class="todo-list">
+          <li v-for="(item, index) in pending" v-bind:key="item.title">
+            <input class="todo-checkbox" v-bind:id="'item_' + item.id" v-model="item.done" type="checkbox">
+            <label v-bind:for="'item_' + item.id"></label>
+            <span class="todo-text">{{ item.title }}</span>
+            <span class="delete" @click="deleteItem(item)"></span>
+          </li>
+        </transition>  
+      </div> 
+
+      <transition name="slide-fade">
+        <p class="status free" v-if="!pending.length" ><img src="images/beer_celebration.svg" alt="celebration">Time to chill!  You have no todos.</p> 
+      </transition> 
+
+      <div v-if="completed.length > 0 && showComplete">
+        <p class="status">Completed tasks: {{ completedPercentage }}</p>
+        <transition-group name="todo-item" tag="ul" class="todo-list archived">
+          <li v-for="(item, index) in completed" v-bind:key="item.title">
+            <input class="todo-checkbox" v-bind:id="'item_' + item.id" v-model="item.done" type="checkbox">
+            <label v-bind:for="'item_' + item.id"></label>
+            <span class="todo-text">{{ item.title }}</span>
+            <span class="delete" @click="deleteItem(item)"></span>
+          </li>
+        </transition>  
+      </div>
+      <div class="control-buttons">
+        <div class="btn btn-secondary" v-if="completed.length > 0" @click="toggleShowComplete"><span v-if="!showComplete">Show</span><span v-else>Hide</span> Complete</div>
+        <div class="btn btn-secondary" v-if="todoList.length > 0" @click="clearAll">Clear All</div>
+      </div>
+    </section>
+  </div>
+  
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
