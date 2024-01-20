@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Profile Form</title>
-  
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background-color: #f5f5f5;
       margin: 0;
       padding: 0;
@@ -18,7 +17,7 @@
     }
 
     .form-container {
-      margin: 0 20px; /* Added left and right margins */
+      margin: 0 20px;
     }
 
     form {
@@ -49,8 +48,7 @@
       font-weight: bold;
     }
 
-    input,
-    select {
+    input, select {
       width: 100%;
       padding: 10px;
       margin-bottom: 16px;
@@ -83,35 +81,32 @@
   </style>
 </head>
 <body>
-
   <div class="form-container">
-    <form id="profileForm" class="mt-5">
-
+    <form action="" id="profileForm">
       <div class="column-left">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" name="name" id="name" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" name="email" id="email" required>
 
         <label for="gender">Gender:</label>
-        <select id="gender" name="gender" required>
-          <option value="male">Male</option>
+        <select name="gender" id="gender" required>
+          <option value="male">male</option>
           <option value="female">Female</option>
           <option value="other">Other</option>
         </select>
 
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
+        <input type="number" name="age" id="age" required>
 
         <button type="button" onclick="submitForm()">Submit</button>
       </div>
 
-      
       <div class="column-right">
-          <label for="photo">Profile Picture:</label>
-          <input type="file" id="photo" name="photo" onchange="displayProfilePic()">
-          <img id="profilePic" src="#" alt="Profile Picture" style="display: none;">
+        <label for="photo">Profile Picture:</label>
+        <input type="file" name="photo" id="photo" onchange="displayProfilePic()">
+        <img src="#" alt="Profile Picture" style="display: none;" id="profilePic">
       </div>
     </form>
   </div>
@@ -120,7 +115,7 @@
     function displayProfilePic() {
       const input = document.getElementById('photo');
       const img = document.getElementById('profilePic');
-
+      
       if (input.files && input.files[0]) {
         const reader = new FileReader();
 
@@ -134,8 +129,6 @@
     }
 
     function submitForm() {
-      // You can add form validation and submission logic here
-      // For simplicity, this example just alerts the form data
       const formData = new FormData(document.getElementById('profileForm'));
 
       for (const pair of formData.entries()) {
@@ -143,6 +136,5 @@
       }
     }
   </script>
-
 </body>
 </html>
